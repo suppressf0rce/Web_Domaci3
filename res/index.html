@@ -7,25 +7,24 @@
 <body>
 
     <h1>Phonebook</h1>
-    <form action="" method="GET">
+    <form id="addForm" action="" method="GET"></form>
+    <form id="listForm" method="GET"></form>
     <table>
         <tr>
-            <tr>
-                 <td>First name:</td>
-                 <td><input type="text" name="firstname" value=""/></td>
-            </tr>
-            <tr>
-                <td>Last name:</td>
-                <td><input type="text" name="lastname" value=""/></td>
-            </tr>
-            <tr>
-                <td>Phone number:</td>
-                <td><input type="text" name="phonenumber" value=""/></td>
-            </tr>
-            <tr>
-                <td><input type="submit" name="add" value="Add Contact"/></td>
-                <td><input type="submit" name="list" value="List Contacts"/></td>
-            </tr>
+            <td>First name:</td>
+            <td><input type="text" name="firstname" value="" form="addForm" required/></td>
+        </tr>
+        <tr>
+            <td>Last name:</td>
+            <td><input type="text" name="lastname" value="" form="addForm" required/></td>
+        </tr>
+        <tr>
+            <td>Phone number:</td>
+            <td><input type="text" name="phonenumber" value="" form="addForm" required/></td>
+        </tr>
+        <tr>
+            <td><input type="submit" form="addForm" name="add" value="Add Contact"/></td>
+            <td><input type="submit" form="listForm" name="list" value="List Contacts"/></td>
+        </tr>
     </table>
-    </form>
 

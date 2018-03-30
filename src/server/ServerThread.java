@@ -1,13 +1,11 @@
 package server;
 
-import com.google.gson.Gson;
 import model.Contact;
-import org.xml.sax.SAXException;
 
-import javax.swing.text.html.HTMLDocument;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.TransformerException;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
@@ -106,10 +104,8 @@ public class ServerThread implements Runnable {
     private void addContact(String header){
         int tmp = header.indexOf("firstname=");
         String firstName = header.substring(tmp+10,header.length());
-        System.out.println(tmp+10);
         tmp = firstName.indexOf('&');
         firstName = firstName.substring(0, tmp);
-        System.out.println(tmp);
 
         tmp = header.indexOf("lastname=");
         String lastName = header.substring(tmp+9, header.length());
